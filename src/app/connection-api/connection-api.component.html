@@ -1,0 +1,11 @@
+<p>connection-api works!</p>
+<div>
+    <div *ngFor="let movie of data">
+        
+        <h4>{{movie.title | json}}</h4>
+        <img src="https://image.tmdb.org/t/p/w92{{movie.poster_path}}" alt="{{movie.title | json}}" >
+        <p>
+            {{movie.overview | json}}
+        </p>
+    </div>
+</div>

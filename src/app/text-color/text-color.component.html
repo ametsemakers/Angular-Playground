@@ -1,0 +1,9 @@
+<br /><br />
+<div>
+    <input type="number" min="1" max="20" [(ngModel)]="numberFromInput" (change)="colorText()"/>
+</div>
+<div>
+    <p [ngClass]="textToColorClass">
+        {{textToColor}}
+    </p>
+</div>

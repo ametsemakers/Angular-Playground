@@ -1,0 +1,2 @@
+<app-user-table [userList]="userList" [updatedUserList]="updatedUserList" (eventEmitterForUserView)="callByUserTableComponent($event)" (eventEmitterForUserViewDeleteUser)="callByUserDetailComponent($event)"></app-user-table>
+<app-user-detail [userTableComponent]="userTableComponent" (eventEmitterForUserViewFromDetail)="callByUserDetailComponent($event)"></app-user-detail>

@@ -1,0 +1,84 @@
+<mat-table class="lessons-table mat-elevation-z8" [dataSource]="userList">
+
+    <ng-container matColumnDef="firstname">
+        <mat-header-cell *matHeaderCellDef>Firstname</mat-header-cell>
+        <mat-cell *matCellDef="let userMat">{{userMat.firstname}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="lastname">
+        <mat-header-cell *matHeaderCellDef>Lastname</mat-header-cell>
+        <mat-cell class="description-cell"
+                  *matCellDef="let userMat">{{userMat.lastname}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="age">
+        <mat-header-cell *matHeaderCellDef>Age</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let userMat">{{userMat.age}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="update">
+        <mat-header-cell *matHeaderCellDef>Update</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let userMat"
+                  (click)="handleClickUpdateElement(userMat)">Update</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let userMat"
+                  (click)="handleClickDeleteElement(userMat)">Delete</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+
+</mat-table>
+
+<br /><hr><br />
+<h4>User table driven by UserTableComponent</h4>
+<div>
+    <label for="filterNumber">Choose age to filter by</label>
+    <input type="number" [(ngModel)]="inputNumerValue" />
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td class="app-table-body">Firstname</td>
+                <td class="app-table-body">Lastname</td>
+                <td class="app-table-body">Age</td>
+                <td class="app-table-body">#</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of userList | sortByAge: inputNumerValue">
+                <td class="app-table-body">{{user.firstname}}</td>
+                <td class="app-table-body">{{user.lastname}}</td>
+                <td class="app-table-body">{{user.age}}</td>
+                <td class="app-table-body">Placeholder</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br /><hr><br />
+<h4>User table driven by UserRowComponent</h4>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td class="app-table-body">Firstname</td>
+                <td class="app-table-body">Lastname</td>
+                <td class="app-table-body">Age</td>
+                <td class="app-table-body">#</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr app-user-row [user]="user" *ngFor="let user of userList" (eventEmitterForUserTable)="callByUserRowComponent($event)">
+
+            </tr>
+        </tbody>
+    </table>
+</div>

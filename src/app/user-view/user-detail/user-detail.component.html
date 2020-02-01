@@ -1,0 +1,7 @@
+<p>user-detail works!</p>
+<div *ngIf="userTableComponent">
+    <p>Firstname : {{userTableComponent.firstname}}</p>
+    <p>Lastname : {{userTableComponent.lastname}}</p>
+    <p>Age : {{userTableComponent.age}}</p>
+    <p><button (click)="handleClickDeleteUserFromUserDetail(userTableComponent)">Delete</button></p>
+</div>

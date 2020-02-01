@@ -1,0 +1,36 @@
+<div>
+    <h1>Directive Angular Exercices</h1>
+</div>
+<div>
+    <h2>Exo 1</h2>
+
+    <div *ngIf="conditionTrue;then templateConditionTrue else templateConditionFalse"></div>
+    <ng-template #templateConditionTrue>C'est true!!</ng-template>
+    <ng-template #templateConditionFalse>C'est false!</ng-template>
+    
+</div>
+<div>
+    <h2>Exo 2</h2>
+
+    <input type="{{inputType}}" value="{{inputText}}" [(ngModel)]="modelText" /><br />
+    {{modelText}}
+</div>
+<div>
+    <h2>Exo 3 : compteur</h2>
+
+    <div>
+        <input type="button" (click)="counter = counter + 1" value="Count!"><br />
+        <p>{{counter}}</p>
+    </div>
+</div>
+<div>
+    <h2>Exo 4 : Options ngFor</h2>
+
+    <select [(ngModel)]="heroValue" (change)="onHeroChange($event)">
+        <option value="{{hero}}" *ngFor="let hero of heroes">{{hero}}</option>
+    </select>
+    <br>
+    <h5>{{heroOption}}</h5>
+    <h4>{{heroValue}}</h4>
+    
+</div>

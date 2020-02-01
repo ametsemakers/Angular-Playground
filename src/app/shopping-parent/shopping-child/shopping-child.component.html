@@ -1,0 +1,18 @@
+<p>shopping-child works!</p>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td class="app-table-body">Name : </td>
+                <td class="app-table-body">Quantity : </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let element of shoppingElements">
+                <td class="app-table-body">{{element.name}}</td>
+                <td class="app-table-body">{{element.qte}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

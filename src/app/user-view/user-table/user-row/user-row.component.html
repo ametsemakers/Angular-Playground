@@ -1,0 +1,21 @@
+<!-- <td class="app-table-body" (click)="handleClickSendUserToParent(user)">{{user.firstname}}</td>
+<td class="app-table-body" (click)="handleClickSendUserToParent(user)">{{user.lastname}}</td>
+<td class="app-table-body" (click)="handleClickSendUserToParent(user)">{{user.age}}</td>
+<td class="app-table-body">Placeholder</td> -->
+<ng-container matColumnDef="firstname">
+    <mat-header-cell *matHeaderCellDef>Firstname</mat-header-cell>
+    <mat-cell *matCellDef="let userMat">{{userMat.firstname}}</mat-cell>
+</ng-container>
+
+<ng-container matColumnDef="lastname">
+    <mat-header-cell *matHeaderCellDef>Lastname</mat-header-cell>
+    <mat-cell class="description-cell"
+              *matCellDef="let userMat">{{userMat.lastname}}</mat-cell>
+
+</ng-container>
+
+<ng-container matColumnDef="age">
+    <mat-header-cell *matHeaderCellDef>Age</mat-header-cell>
+    <mat-cell class="duration-cell"
+              *matCellDef="let userMat">{{userMat.age}}</mat-cell>
+</ng-container>

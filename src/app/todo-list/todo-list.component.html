@@ -1,0 +1,55 @@
+<br /><br />
+<h4>LocalStorageService Test</h4>
+<br /><br />
+<form>
+    <div>
+        <label for="key">Key : </label>
+        <input type="text" id="key" [(ngModel)]="keyValue" [ngModelOptions]="{standalone: true}" />{{keyValue}}
+    </div>
+    <div>
+        <label for="value">Value : </label>
+        <input type="text" id="value" [(ngModel)]="ValValue" [ngModelOptions]="{standalone: true}" />{{ValValue}}
+    </div>
+    <div>
+        <button (click)="handeClickSaveToLocalStorage()">Save</button>
+        <button (click)="handleClickGetFromLocalStorage()">Get</button>
+    </div>
+    <div>
+        <button (click)="handleClickDeleteFromLocalStorage()">Delete</button>
+        <button (click)="handleClickClearLocalStorage()">Clear</button>
+    </div>
+</form>
+<br /><br />
+<h4>Todo List</h4>
+<br /><br />
+<form>
+    <div>
+        <label for="name">Name : </label>
+        <input type="text" id="name" [(ngModel)]="inputName" [ngModelOptions]="{standalone: true}" />{{inputName}}
+    </div>
+    <div>
+        <label for="qte">Quantity : </label>
+        <input type="text" id="qte" [(ngModel)]="inputQte" [ngModelOptions]="{standalone: true}" />{{inputQte}}
+    </div>
+    <div>
+        <button (click)="handleClickInputTable()">Go!</button>
+    </div>
+</form>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td class="app-table-body">Name : </td>
+                <td class="app-table-body">Quantity : </td>
+                <td class="app-table-body">#</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let element of shoppingElements; index as i">
+                <td class="app-table-body">{{element.name}}</td>
+                <td class="app-table-body">{{element.qte}}</td>
+                <td class="app-table-body" (click)="handleClickDeleteElementFromTable(i)">Delete</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
