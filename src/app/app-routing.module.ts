@@ -9,9 +9,15 @@ import { ShoppingParentComponent } from './shopping-parent/shopping-parent.compo
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { UserViewComponent } from './user-view/user-view.component';
 import { TableTestComponent } from './table-test/table-test.component';
+import { DisplaySelectComponent } from './display-select/display-select.component';
+import { UserTableByServiceComponent } from './user-table-by-service/user-table-by-service.component';
+import { VinylComponent } from './vinyl/vinyl.component';
 
 
 const routes: Routes = [
+  { path: 'vinyl', component: VinylComponent },
+  { path: 'user-table-by-service', component: UserTableByServiceComponent },
+  { path: 'display-select', component: DisplaySelectComponent },
   { path: 'todo-list', component: TodoListComponent },
   { path: 'directive-angular', component: DirectiveAngularComponent },
   { path: 'typage-angular', component: TypageAngularComponent },

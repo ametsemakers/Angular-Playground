@@ -1,0 +1,15 @@
+.app-vinyls-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.app-vinyls-card {
+    width: 30%;
+    padding: 5px;
+    margin: 8px 1px 1px;
+    background-color: rgb(235, 232, 192);
+    text-align: center;
+    border-radius: 20px;
+}
+

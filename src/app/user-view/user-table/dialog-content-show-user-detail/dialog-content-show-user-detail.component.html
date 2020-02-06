@@ -1,0 +1,69 @@
+<h1 mat-dialog-title>Row Action :: <strong>{{action}}</strong></h1>
+<div mat-dialog-content>
+    <span  *ngIf="action != 'Delete'; else elseTemplate">
+        <mat-form-field>
+            <div>
+                <input placeholder="{{action}} firstname" matInput [(ngModel)]="localData.firstname">
+            </div>
+        </mat-form-field>
+        <mat-form-field>
+            <div>
+                <input placeholder="{{action}} lastname" matInput [(ngModel)]="localData.lastname">
+            </div>
+        </mat-form-field>
+        <mat-form-field>
+            <div>
+                <input placeholder="{{action}} age" matInput [(ngModel)]="localData.age">
+            </div>
+        </mat-form-field>
+    </span>
+    <ng-template #elseTemplate>
+        Sure To delete <b>{{localData.firstname}} {{localData.lastname}}</b>?
+    </ng-template>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="doAction()">{{action}}</button>
+    <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+</div>
+
+<!-- <div>
+    <div>
+        <h4 mat-dialog-title><User Card></h4>
+    </div>
+    <hr>
+    <mat-dialog-content>
+        <div *ngIf="updateUser;then templateUpdateUser else templateViewUser"></div>
+        <ng-template #templateViewUser>
+            <p>Firstname : {{data.user.firstname}}</p>
+            <p>Lastname : {{data.user.lastname}}</p>
+            <p>Age : {{data.user.age}}</p>
+            <span *ngIf="moreDetails">
+                <p>blabla</p>
+            </span>
+        </ng-template>
+        <ng-template #templateUpdateUser>
+            <div>
+                <label for="firstname">Firstname</label>
+                <input type="text" id="firstname" [(ngModel)]="inputUserFirstname" placeholder="{{data.user.firstname}}" value="inputUserFirstname" />
+            </div>
+            <div>
+                <label for="lastname">Lastname</label>
+                <input type="text" id="lastname" [(ngModel)]="inputUserLastname" placeholder="{{data.user.lastname}}" value="inputUserLastname" />
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" id="age" [(ngModel)]="inputUserAge" placeholder="{{data.user.age}}" value="{{inputUserAge}}" />
+            </div>
+            <div>
+                <button class="app-modal-button app-modal-more-button" (click)="handleClickUpdateUser()">Update</button>
+            </div>
+        </ng-template>
+        
+    </mat-dialog-content>
+    <mat-dialog-actions class="app-modal-button-container">
+        <button class="app-modal-button app-modal-more-button" mat-button cdkFocusInitial (click)="moreDetails = !moreDetails">More...</button>
+        <button class="app-modal-button app-modal-more-button" mat-button (click)="updateUser = !updateUser">Modify</button>
+        <button class="app-modal-button app-modal-close-button" mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</div> -->
+

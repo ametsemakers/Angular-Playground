@@ -1,4 +1,4 @@
-<mat-table class="lessons-table mat-elevation-z8" [dataSource]="userList">
+<mat-table class="lessons-table mat-elevation-z8" [dataSource]="userList" #myTable>
 
     <ng-container matColumnDef="firstname">
         <mat-header-cell *matHeaderCellDef>Firstname</mat-header-cell>
@@ -17,18 +17,31 @@
                   *matCellDef="let userMat">{{userMat.age}}</mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="update">
-        <mat-header-cell *matHeaderCellDef>Update</mat-header-cell>
+    <ng-container matColumnDef="add">
+        <mat-header-cell *matHeaderCellDef>Add</mat-header-cell>
         <mat-cell class="duration-cell"
-                  *matCellDef="let userMat"
-                  (click)="handleClickUpdateElement(userMat)">Update</mat-cell>
+                  *matCellDef="let userMat">
+            <button mat-button (click)="openDialog('Add', userMat)">Add</button>
+        </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+        <mat-header-cell *matHeaderCellDef>Edit</mat-header-cell>
+        <mat-cell class="duration-cell"
+                  *matCellDef="let userMat">
+            <button mat-button (click)="openDialog('Update', userMat)">Edit</button>
+        </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="delete">
         <mat-header-cell *matHeaderCellDef>Delete</mat-header-cell>
         <mat-cell class="duration-cell"
                   *matCellDef="let userMat"
-                  (click)="handleClickDeleteElement(userMat)">Delete</mat-cell>
+                  
+                  >
+            <button mat-button (click)="openDialog('Delete', userMat)">Delete</button>
+            <!-- <button mat-button (click)="handleClickDeleteElement(userMat)">Delete</button> -->
+        </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
@@ -37,6 +50,10 @@
 
 </mat-table>
 
+<br />
+<hr>
+<p>{{optionsUser?.firstname}}</p>
+<hr>
 <br /><hr><br />
 <h4>User table driven by UserTableComponent</h4>
 <div>

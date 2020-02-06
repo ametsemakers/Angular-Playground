@@ -1,0 +1,11 @@
+<div class="app-vinyls-card-container">
+    <div class="app-vinyls-card" *ngFor="let vinyl of vinyls">
+        <h4>{{vinyl.artist}}</h4>
+        <h5>{{vinyl.titleAlbum}}</h5>
+        <div>
+            
+        </div>
+        <p>{{vinyl.yearOriginal}}</p>
+    </div>
+</div>
+{{vinyls | json}}

@@ -16,14 +16,14 @@ export class UserViewComponent implements OnInit, OnChanges {
 
   constructor(private changeDetectorRefs: ChangeDetectorRef) {
     this.userList = [
-      new User('Jeanne', 'D\'arc', 607),
-      new User('Nelson', 'Mandela', 101),
-      new User('Albert', 'Einstein', 140),
-      new User('Donald', 'Trump', 73),
-      new User('Friedrich', 'Nietzsche', 175),
-      new User('Alan', 'Turing', 107),
-      new User('Marie', 'Curie', 152),
-      new User('Michael', 'Jackson', 61)
+      new User('Jeanne', 'D\'arc', 607, ''),
+      new User('Nelson', 'Mandela', 101, ''),
+      new User('Albert', 'Einstein', 140, ''),
+      new User('Donald', 'Trump', 73, ''),
+      new User('Friedrich', 'Nietzsche', 175, ''),
+      new User('Alan', 'Turing', 107, ''),
+      new User('Marie', 'Curie', 152, ''),
+      new User('Michael', 'Jackson', 61, '')
     ];
   }
 
@@ -43,6 +43,7 @@ export class UserViewComponent implements OnInit, OnChanges {
   callByUserDetailComponent(user: User) {
     if (user) {
       console.log('UserViewComponent --- callByUserDetailComponent() --- user : ' + user);
+
       const index = this.userList.indexOf(user);
       console.log('index : ' + index);
       console.log('original list ' + this.userList);

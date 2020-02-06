@@ -11,7 +11,7 @@ export class TypageAngularComponent implements OnInit {
   user: User;
 
   constructor() {
-    this.user = new User('Alex', 'Metsemakers', 18);
+    this.user = new User('Alex', 'Metsemakers', 18, 'Développeur');
   }
 
   ngOnInit() {

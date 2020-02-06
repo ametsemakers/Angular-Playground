@@ -1,0 +1,19 @@
+.app-modal-button-container {
+    justify-content: space-between;
+}
+.app-modal-button {
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+    -webkit-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.55);
+    box-shadow: 0px 2px 5px 1px rgba(0,0,0,0.55);
+}
+.app-modal-more-button {
+    border: 1px solid #5c5b5e;
+    background-color: #5c5b5e;
+}
+.app-modal-close-button {
+    border: 1px solid rgb(67, 54, 125);
+    background-color: rgb(67, 54, 125);
+}

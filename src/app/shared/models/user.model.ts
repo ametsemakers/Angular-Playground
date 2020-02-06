@@ -1,17 +1,20 @@
 export class User {
-    firstname: string;
-    lastname: string;
+
+    name: string;
+    surname: string;
     age: number;
+    profession: string;
 
-    constructor(firstname: string, lastname: string, age: number) {
+    constructor(name: string, surname: string, age: number, profession: string) {
 
-        this.firstname = firstname;
-        this.lastname  = lastname;
+        this.name = name;
+        this.surname  = surname;
         this.age       = age;
+        this.profession = profession;
     }
 
     toString(): string {
-        return 'Prénom: ' + this.firstname + ' Nom: ' + this.lastname + ' Age: ' + this.age;
+        return 'Prénom: ' + this.name + ' Nom: ' + this.surname + ' Age: ' + this.age;
     }
 
     // fullName(): string {

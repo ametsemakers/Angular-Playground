@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule } from '@angular/material';
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule, MatDialogModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +23,15 @@ import { TableTestComponent } from './table-test/table-test.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LocalStorageService } from './shared/services/local-storage.service';
 import { SortByAgePipe } from './user-view/pipes/sort-by-age.pipe';
+import { DialogContentShowUserDetailComponent } from './user-view/user-table/dialog-content-show-user-detail/dialog-content-show-user-detail.component';
+import { DisplaySelectComponent } from './display-select/display-select.component';
+import { UserServiceService } from './user-view/services/user-service.service';
+import { UserTableByServiceComponent } from './user-table-by-service/user-table-by-service.component';
+import { UserDetailByServiceComponent } from './user-table-by-service/user-detail-by-service/user-detail-by-service.component';
+import { UserListByServiceComponent } from './user-table-by-service/user-list-by-service/user-list-by-service.component';
+import { UserRowByServiceComponent } from './user-table-by-service/user-list-by-service/user-row-by-service/user-row-by-service.component';
+import { VinylComponent } from './vinyl/vinyl.component';
+import { VinylDetailComponent } from './vinyl-detail/vinyl-detail.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +50,15 @@ import { SortByAgePipe } from './user-view/pipes/sort-by-age.pipe';
     UserDetailComponent,
     UserRowComponent,
     TableTestComponent,
-    SortByAgePipe
+    SortByAgePipe,
+    DialogContentShowUserDetailComponent,
+    DisplaySelectComponent,
+    UserTableByServiceComponent,
+    UserDetailByServiceComponent,
+    UserListByServiceComponent,
+    UserRowByServiceComponent,
+    VinylComponent,
+    VinylDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,9 +71,16 @@ import { SortByAgePipe } from './user-view/pipes/sort-by-age.pipe';
     MatTableModule,
     MatInputModule,
     MatPaginatorModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatDialogModule
   ],
-  providers: [LocalStorageService],
+  entryComponents: [
+    DialogContentShowUserDetailComponent
+  ],
+  providers: [
+    LocalStorageService,
+    UserServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

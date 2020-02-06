@@ -1,0 +1,22 @@
+<h4>User list</h4>
+<div>
+    <input [(ngModel)]="inputName" />{{inputName}}
+    <input [(ngModel)]="inputSurname" />{{inputSurname}}
+    <input [(ngModel)]="inputAge" />{{inputAge}}
+    <input [(ngModel)]="inputProfession" />{{inputProfession}}
+</div>
+<div>
+    <button (click)="addUser()">Add user</button>
+</div>
+<div *ngFor="let user of userList | keyvalue" class="app-user-by-service">
+    <p (click)="setObservable$(user.value)">Name: {{user.value.name}} &nbsp;</p>
+    <p>| Lastname: {{user.value.surname}} &nbsp;</p>
+    <p>| Age: {{user.value.age}}  &nbsp;</p>
+    <p>| Profession: {{user.value.profession}}  &nbsp;</p>
+    <button (click)="deleteUser(user.key)">Delete</button>
+</div>
+<div>
+    <button (click)="getUser()">Get users in console</button>
+</div>
+<app-user-detail-by-service></app-user-detail-by-service>
+<p>{{user | json}}</p>

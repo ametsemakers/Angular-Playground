@@ -1,4 +1,7 @@
 <div class="app-nav-container">
+    <a [routerLink]="['/vinyl']">Vinyl</a>
+    <a [routerLink]="['/user-table-by-service']">User service</a>
+    <a [routerLink]="['/display-select']">Display select</a>
     <a [routerLink]="['/user-view']">User view</a>
     <a [routerLink]="['/todo-list']">Todo list</a>
     <a [routerLink]="['/shopping-parent']">Shopping parent</a>
@@ -8,4 +11,11 @@
     <a [routerLink]="['/typage-angular']">Typage</a>
     <a [routerLink]="['/expression-component']">Expression</a>
     <a [routerLink]="['/connection-api']">Movie db</a>
+    <select name="names" id="name-select" 
+        [(ngModel)]="optionValue" 
+        (change)="setObservable$(optionValue)" 
+        required>
+        <option hidden [ngValue]="null" selected disabled>Choose option</option>
+        <option *ngFor="let user of userList" [ngValue]="user">{{user.firstname}}</option>
+    </select>
 </div>

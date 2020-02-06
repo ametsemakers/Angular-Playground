@@ -1,15 +1,24 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VinylApiWebService {
-  API_URL = 'localhost/8000/vinyls';
+  API_URL = 'http://localhost:8080/api/vinyls';
 
   constructor(private httpClient: HttpClient) { }
 
-  public getVinyls() {
-    return this.httpClient.get(this.API_URL);
+  getVinyls(): Observable<any> {
+    return this.httpClient.get(this.API_URL)
+      .pipe(
+        catchError((error) => this.handleError(error))
+      );
+  }
+
+  private handleError(error: HttpErrorResponse) {
+    return throwError('Something unexpected happened while connecting to the server. Please try again later.');
   }
 }
