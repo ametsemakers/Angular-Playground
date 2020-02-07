@@ -31,7 +31,7 @@ import { UserDetailByServiceComponent } from './user-table-by-service/user-detai
 import { UserListByServiceComponent } from './user-table-by-service/user-list-by-service/user-list-by-service.component';
 import { UserRowByServiceComponent } from './user-table-by-service/user-list-by-service/user-row-by-service/user-row-by-service.component';
 import { VinylComponent } from './vinyl/vinyl.component';
-import { VinylDetailComponent } from './vinyl-detail/vinyl-detail.component';
+import { VinylDetailComponent } from './vinyl/vinyl-detail/vinyl-detail.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +75,8 @@ import { VinylDetailComponent } from './vinyl-detail/vinyl-detail.component';
     MatDialogModule
   ],
   entryComponents: [
-    DialogContentShowUserDetailComponent
+    DialogContentShowUserDetailComponent,
+    VinylDetailComponent
   ],
   providers: [
     LocalStorageService,

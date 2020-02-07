@@ -1,0 +1,14 @@
+<div mat-dialog-content>
+    <h4 mat-dialog-title>{{vinyl.titleAlbum}}</h4>
+    <h5>{{vinyl.artist}}</h5>
+    <p>détails</p>
+    <span *ngIf="showSongs">
+        <div *ngFor="let song of vinyl.songs">
+            <p>{{song.titleSong}}</p>
+        </div>
+    </span>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="handleClickShowSongs()">{{showSongButtonMessage}}</button>
+    <button mat-button mat-dialog-close>Close</button>
+</div>
