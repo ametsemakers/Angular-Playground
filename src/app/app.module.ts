@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule, MatDialogModule } from '@angular/material';
 
@@ -32,6 +32,8 @@ import { UserListByServiceComponent } from './user-table-by-service/user-list-by
 import { UserRowByServiceComponent } from './user-table-by-service/user-list-by-service/user-row-by-service/user-row-by-service.component';
 import { VinylComponent } from './vinyl/vinyl.component';
 import { VinylDetailComponent } from './vinyl/vinyl-detail/vinyl-detail.component';
+import { VinylFormComponent } from './vinyl-form/vinyl-form.component';
+import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -59,6 +61,7 @@ import { VinylDetailComponent } from './vinyl/vinyl-detail/vinyl-detail.componen
     UserRowByServiceComponent,
     VinylComponent,
     VinylDetailComponent,
+    VinylFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -72,7 +75,8 @@ import { VinylDetailComponent } from './vinyl/vinyl-detail/vinyl-detail.componen
     MatInputModule,
     MatPaginatorModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    FormBuilder
   ],
   entryComponents: [
     DialogContentShowUserDetailComponent,
