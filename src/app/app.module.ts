@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, FormBuilder } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule, MatDialogModule } from '@angular/material';
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSortModule, MatTableModule, MatDialogModule, MatFormFieldModule, MatGridListModule, MatButtonModule } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -76,7 +76,10 @@ import { from } from 'rxjs';
     MatPaginatorModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    FormBuilder
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatGridListModule,
+    MatButtonModule
   ],
   entryComponents: [
     DialogContentShowUserDetailComponent,

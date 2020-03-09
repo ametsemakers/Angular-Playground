@@ -1,41 +1,60 @@
-<h3>Formulaire</h3>
-<div>
-    <form [formGroup]="vinylForm" (ngSubmit)="onSubmit(vinylForm.value)">
-        <div>
-            <label for="artist">Artiste</label>
-            <input id="artist" type="text" formControlName="artist">
-        </div>
+<div class="form-container">
+    <mat-grid-list cols="2" rowHeight="70px">
+        <mat-grid-tile colspan="2">
+            <h2 mat-dialog-title>Add a vinyl</h2>
+        </mat-grid-tile>
+    </mat-grid-list>
+    <mat-dialog-content [formGroup]="form">
+        <mat-grid-list cols="4" rowHeight="70px" gutterSize="3px">
+            <mat-grid-tile colspan="2">
+                <mat-form-field>
+                    <input matInput matNativeControl placeholder="Artist" formControlName="artist">
+                </mat-form-field>
+            </mat-grid-tile>
 
-        <div>
-            <label for="titleAlbum">Titre album</label>
-            <input id="titleAlbum" type="text" formControlName="titleAlbum">
-        </div>
+            <mat-grid-tile colspan="2">
+                <mat-form-field>
+                    <input matInput matNativeControl placeholder="Title album" formControlName="titleAlbum">
+                </mat-form-field>
+            </mat-grid-tile>
 
-        <div>
-            <label for="label">Label</label>
-            <input id="label" type="text" formControlName="label">
-        </div>
+            <mat-grid-tile colspan="2">
+                <mat-form-field>
+                    <input matInput matNativeControl placeholder="Label" formControlName="label">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <mat-form-field>
+                    <input matInput matNativeControl placeholder="Cat nb." formControlName="catNb">
+                </mat-form-field>
+            </mat-grid-tile>
 
-        <div>
-            <label for="country">Country</label>
-            <input id="country" type="text" formControlName="country">
-        </div>
-
-        <div>
-            <label for="catNb">Category no</label>
-            <input id="catNb" type="text" formControlName="catNb">
-        </div>
-
-        <div>
-            <label for="yearOriginal">Année sortie</label>
-            <input id="yearOriginal" type="text" formControlName="yearOriginal">
-        </div>
-
-        <div>
-            <label for="yearEdition">Année édition</label>
-            <input id="yearEdition" type="text" formControlName="yearEdition">
-        </div>
-
-        <button type="submit">Valider</button>
-    </form>
+            <mat-grid-tile colspan="2">
+                <mat-form-field>
+                    <input matInput matNativeControl placeholder="Country" formControlName="country">
+                </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile colspan="2">
+                <mat-form-field>
+                    <input matInput matNativeControl placeholder="Year original" formControlName="yearOriginal">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+        <mat-grid-list cols="2" rowHeight="70px">
+            <mat-grid-tile colspan="2">
+                <mat-form-field>
+                    <input matIput matNativeControl placeholder="Year edition" formControlName="yearEdition">
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </mat-dialog-content>
+    <div>
+        <mat-dialog-actions>
+            <div>
+                <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onSubmit()">Save</button>
+            
+                <button mat-raised-button (click)="closeDialog()">Close</button>
+            </div>
+        </mat-dialog-actions>
+    </div>
 </div>

@@ -12,9 +12,10 @@ import { TableTestComponent } from './table-test/table-test.component';
 import { DisplaySelectComponent } from './display-select/display-select.component';
 import { UserTableByServiceComponent } from './user-table-by-service/user-table-by-service.component';
 import { VinylComponent } from './vinyl/vinyl.component';
-
+import { VinylFormComponent } from './vinyl-form/vinyl-form.component';
 
 const routes: Routes = [
+  { path: 'vinylForm', component: VinylFormComponent },
   { path: 'vinyl', component: VinylComponent },
   { path: 'user-table-by-service', component: UserTableByServiceComponent },
   { path: 'display-select', component: DisplaySelectComponent },
