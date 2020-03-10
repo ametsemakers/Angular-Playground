@@ -16,11 +16,13 @@ export class VinylComponent implements OnInit {
   private subscription$: Subscription;
 
   vinyls = Array<any>();
-  vinyl = new Vinyl();
+  vinyl: Vinyl = { id: null, artist: null, titleAlbum: null, label: null,
+    catNb: null, country: null, yearOriginal: null, yearEdition: null };
   song = new Song();
 
 
-  constructor(private vinylService: VinylApiWebService, public dialog: MatDialog) { }
+  constructor(private vinylService: VinylApiWebService,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
     this.subscription$ =
@@ -46,15 +48,42 @@ export class VinylComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
 
-    this.dialog.open(VinylFormComponent, dialogConfig);
-
-    const dialogRef = this.dialog.open(VinylFormComponent, dialogConfig);
-
-    dialogRef.afterClosed().subscribe(
+    this.dialog.open(VinylFormComponent, dialogConfig).afterClosed(
+    ).subscribe(
       (data) => {
         console.log(data);
+        if (data) {
+          console.log('data defined');
+          this.appendFields(data);
+        }
       }
     );
+
+    // const dialogRef = this.dialog.open(VinylFormComponent, dialogConfig);
+    // dialogRef.afterClosed().subscribe(
+    //   (data) => {
+    //     console.log('afterclosed');
+    //     if (data === !undefined) {
+    //       this.appendFields(data);
+    //     }
+    //   }
+    // );
+  }
+
+  submitData(vinyl: Vinyl) {
+    console.log(vinyl);
+  }
+
+  appendFields(data) {
+    this.vinyl.artist = data.artist;
+    this.vinyl.titleAlbum = data.titleAlbum;
+    this.vinyl.label = data.label;
+    this.vinyl.catNb = data.catNb;
+    this.vinyl.country = data.country;
+    this.vinyl.yearOriginal = data.yearOriginal;
+    this.vinyl.yearEdition = data.yearEdition;
+    console.log('appendfields');
+    this.submitData(this.vinyl);
   }
 
 }

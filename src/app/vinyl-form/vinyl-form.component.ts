@@ -21,10 +21,10 @@ export class VinylFormComponent implements OnInit {
     private dialogRef: MatDialogRef<VinylFormComponent>,
     @Inject(MAT_DIALOG_DATA) data
   ) {
-    this.createForm();
   }
 
   ngOnInit() {
+    this.createForm();
   }
 
   createForm() {
@@ -66,12 +66,11 @@ export class VinylFormComponent implements OnInit {
   // }
 
 
-  onSubmit() {
-    this.dialogRef.close(this.form.value);
+  onSubmit(form: FormGroup) {
+    this.dialogRef.close(form.value);
   }
 
-  closeDialog() {
+  closeDialog(): void {
     this.dialogRef.close();
   }
-
 }

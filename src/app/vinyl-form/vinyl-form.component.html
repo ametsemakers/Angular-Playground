@@ -51,9 +51,9 @@
     <div>
         <mat-dialog-actions>
             <div>
-                <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onSubmit()">Save</button>
+                <button mat-raised-button color="primary" [disabled]="!form.valid" (click)="onSubmit(form)">Save</button>
             
-                <button mat-raised-button (click)="closeDialog()">Close</button>
+                <button mat-raised-button mat-dialog-close (click)="closeDialog()">Close</button>
             </div>
         </mat-dialog-actions>
     </div>
